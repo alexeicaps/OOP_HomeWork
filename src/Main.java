@@ -1,6 +1,4 @@
-import units.Crossbowman;
-import units.Magician;
-import units.Names;
+import units.*;
 
 import java.util.*;
 
@@ -13,12 +11,29 @@ import java.util.*;
  * */
 public class Main {
     public static void main(String[] args) {
-        Random random = new Random();
 
         Magician magician1 = new Magician("Ivan");
-        magician1.print();
+        System.out.println(magician1);
 
-        Crossbowman crossbowman = new Crossbowman(random.toString(Names));
-        crossbowman.print();
+        Crossbowman crossbowman1 = new Crossbowman("John");
+        System.out.println(crossbowman1);
+
+        Monk monk1 = new Monk("Lilly");
+        System.out.println(monk1);
+
+        Bandit bandit1 = new Bandit("Harry");
+        System.out.println(bandit1);
+
+        Sniper sniper1 = new Sniper("Leon");
+        System.out.println(sniper1);
+
+        Peasant peasant1 = new Peasant("Bob");
+        System.out.println(peasant1);
+
+        Spearman spearman1 = new Spearman("Ron");
+        System.out.println(spearman1);
+
+//        spearman1.print();
+
     }
 }
