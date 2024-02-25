@@ -1,5 +1,7 @@
 package units;
 
+import java.util.Random;
+
 abstract public class Unit {
     protected String name;
     protected int health;
@@ -12,7 +14,12 @@ abstract public class Unit {
     protected int hiding;
     protected int maxHealth;
 
-    String className;
+    protected String className;
+    protected static Random random;
+
+    static {
+        Unit.random = new Random();
+    }
 
 
 
@@ -31,6 +38,26 @@ abstract public class Unit {
     public void print(){
         System.out.println("class: " + className + " Name: " + name + " Hp: " + health);
     }
+
+    public int getDamage(Unit unit1, Unit target){
+        if (this.health - unit1.powerHit > 0) {
+            this.health -= unit1.powerHit;
+            return this.health;
+        }
+        else {
+            return -1;
+        }
+    }
+
+    public int healing(Monk monk, Unit unit){
+        return unit.health += monk.healing;
+    }
+
+    public int magic(Magician magician, Unit unit){
+        return unit.health -= magician.mana;
+    }
+
+
 
 
 //    public void getInfo(){
