@@ -4,8 +4,8 @@ public class Magician extends Unit{
     protected int mana;
     protected String magic;
 
-    public Magician(String name) {
-        super(name, 150, "magicStick", 20, 2, 10,50, 40);
+    public Magician(String name, int x, int y) {
+        super(name, 150, "magicStick", 20, 2, 10,50, 40, new Position(x, y));
         mana = 30;
         magic = "wizardDust";
     }

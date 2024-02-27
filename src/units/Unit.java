@@ -13,17 +13,14 @@ abstract public class Unit {
 
     protected int hiding;
     protected int maxHealth;
-
+    int x;
+    int y;
+    public Position position;
     protected String className;
-    protected static Random random;
-
-    static {
-        Unit.random = new Random();
-    }
 
 
-
-    public Unit (String name, int health, String weapon, int powerHit, int speed, int armor, int attackRange, int hiding){
+    public Unit (String name, int health, String weapon, int powerHit, int speed,
+                 int armor, int attackRange, int hiding, Position position){
         this.className = getClass().getSimpleName();
         this.name = name;
         this.health = this.maxHealth = health;
@@ -33,6 +30,7 @@ abstract public class Unit {
         this.armor = armor;
         this.attackRange = attackRange;
         this.hiding = hiding;
+        this.position = position;
     }
 
     public void print(){

@@ -24,27 +24,82 @@ import java.util.*;
  */
 public class Main {
     public static void main(String[] args) {
-
-        Magician magician1 = new Magician("Ivan");
-        System.out.println(magician1);
-
-        Crossbowman crossbowman1 = new Crossbowman("John");
-        System.out.println(crossbowman1);
-
-        Monk monk1 = new Monk("Lilly");
-        System.out.println(monk1);
-
-        Bandit bandit1 = new Bandit("Harry");
-        System.out.println(bandit1);
-
-        Sniper sniper1 = new Sniper("Leon");
-        System.out.println(sniper1);
-
-        Peasant peasant1 = new Peasant("Bob");
-        System.out.println(peasant1);
-
-        Spearman spearman1 = new Spearman("Ron");
-        System.out.println(spearman1);
-
+        Random random = new Random();
+        ArrayList<Unit> team1 = new ArrayList<>();
+        ArrayList<Unit> team2 = new ArrayList<>();
+        int teamcount = 10;
+        for (int i = 0; i < teamcount; i++) {
+            int val = random.nextInt(7);
+            int coordX1 = random.nextInt(10);
+            int coordX2 = random.nextInt(10);
+            Position xy1 = new Position(coordX1, 1);
+            Position xy2 = new Position(coordX2, 10);
+            System.out.println(xy1);
+            switch (val){
+                case 0:
+                    team1.add(new Bandit(getName(), i, 1));
+                    break;
+                case 1:
+                    team1.add(new Crossbowman(getName(), i, 1));
+                    break;
+                case 2:
+                    team1.add(new Magician(getName(), i, 1));
+                    break;
+                case 3:
+                    team1.add(new Monk(getName(), i, 1));
+                    break;
+                case 4:
+                    team1.add(new Peasant(getName(), i, 1));
+                    break;
+                case 5:
+                    team1.add(new Sniper(getName(), i, 1));
+                case 6:
+                    team1.add(new Spearman(getName(), i, 1));
+                    break;
+            }
+        }
+//        System.out.println(team1);
     }
+
+//    Random random = new Random();
+
+    public static String getName(){
+        return String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+    //        Magician magician1 = new Magician("Ivan");
+//        System.out.println(magician1);
+//
+//        Crossbowman crossbowman1 = new Crossbowman("John");
+//        System.out.println(crossbowman1);
+//
+//        Monk monk1 = new Monk("Lilly");
+//        System.out.println(monk1);
+//
+//        Bandit bandit1 = new Bandit("Harry");
+//        System.out.println(bandit1);
+//
+//        Sniper sniper1 = new Sniper("Leon");
+//        System.out.println(sniper1);
+//
+//        Peasant peasant1 = new Peasant("Bob");
+//        System.out.println(peasant1);
+//
+//        Spearman spearman1 = new Spearman("Ron");
+//        System.out.println(spearman1);
 }
+
+
+
+
+
