@@ -31,12 +31,6 @@ abstract public class Unit {
         this.position = position;
     }
 
-    public Unit(String name, int powerHit) {
-        this.name = name;
-        this.powerHit = powerHit;
-    }
-
-
     //Метод вывода имени и координат
     public void printCoordinates(){
         System.out.println("Name: " + name + ", Position: " + position.getX() + ", " + position.getY());
