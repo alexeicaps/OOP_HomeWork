@@ -2,7 +2,7 @@ package units;
 
 public class Position {
 
-    int X, Y;
+    protected int X, Y;
     public Position(int x, int y){
         X = x;
         Y = y;
@@ -14,5 +14,11 @@ public class Position {
 
     public int getY() {
         return Y;
+    }
+
+
+    //Метод нахождения расстояния между двумя персонажами
+    public double distance(Position target){
+        return Math.sqrt((Math.pow(X - target.X, 2) + Math.pow(Y - target.Y, 2)));
     }
 }

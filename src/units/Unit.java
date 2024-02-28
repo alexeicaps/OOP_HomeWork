@@ -1,7 +1,5 @@
 package units;
 
-import java.util.Random;
-
 abstract public class Unit {
     protected String name;
     protected int health;
@@ -15,12 +13,12 @@ abstract public class Unit {
     protected int maxHealth;
     int x;
     int y;
-    public Position position;
+    protected Position position;
     protected String className;
 
 
-    public Unit (String name, int health, String weapon, int powerHit, int speed,
-                 int armor, int attackRange, int hiding, Position position){
+
+    public Unit (String name, int health, String weapon, int powerHit, int speed, int armor, int attackRange, int hiding, Position position){
         this.className = getClass().getSimpleName();
         this.name = name;
         this.health = this.maxHealth = health;
@@ -33,6 +31,18 @@ abstract public class Unit {
         this.position = position;
     }
 
+    public Unit(String name, int powerHit) {
+        this.name = name;
+        this.powerHit = powerHit;
+    }
+
+
+    //Метод вывода имени и координат
+    public void printCoordinates(){
+        System.out.println("Name: " + name + ", Position: " + position.getX() + ", " + position.getY());
+    }
+
+    //Метод вывода информации
     public void print(){
         System.out.println("class: " + className + " Name: " + name + " Hp: " + health);
     }
@@ -54,8 +64,6 @@ abstract public class Unit {
     public int magic(Magician magician, Unit unit){
         return unit.health -= magician.mana;
     }
-
-
 
 
 //    public void getInfo(){

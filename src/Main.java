@@ -1,6 +1,7 @@
 import units.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 /** Seminar 1
  *
@@ -24,60 +25,83 @@ import java.util.*;
  */
 public class Main {
     public static void main(String[] args) {
+
         Random random = new Random();
         ArrayList<Unit> team1 = new ArrayList<>();
         ArrayList<Unit> team2 = new ArrayList<>();
-        int teamcount = 10;
-        for (int i = 0; i < teamcount; i++) {
-            int val = random.nextInt(7);
-            int coordX1 = random.nextInt(10);
-            int coordX2 = random.nextInt(10);
-            Position xy1 = new Position(coordX1, 1);
-            Position xy2 = new Position(coordX2, 10);
-            System.out.println(xy1);
-            switch (val){
+
+        int teamCount = 10;
+        for (int i = 0; i < 10; i++) {
+            switch (random.nextInt(7)) {
                 case 0:
-                    team1.add(new Bandit(getName(), i, 1));
+                    team1.add(new Bandit(getNames(), i, 1));
                     break;
                 case 1:
-                    team1.add(new Crossbowman(getName(), i, 1));
+                    team1.add(new Crossbowman(getNames(), i, 1));
                     break;
                 case 2:
-                    team1.add(new Magician(getName(), i, 1));
+                    team1.add(new Magician(getNames(), i, 1));
                     break;
                 case 3:
-                    team1.add(new Monk(getName(), i, 1));
+                    team1.add(new Monk(getNames(), i, 1));
                     break;
                 case 4:
-                    team1.add(new Peasant(getName(), i, 1));
+                    team1.add(new Peasant(getNames(), i, 1));
                     break;
                 case 5:
-                    team1.add(new Sniper(getName(), i, 1));
+                    team1.add(new Sniper(getNames(), i, 1));
+                    break;
                 case 6:
-                    team1.add(new Spearman(getName(), i, 1));
+                    team1.add(new Spearman(getNames(), i, 1));
+                    break;
+            }
+
+////        for (int i = 0; i < 10; i++) {
+////            int val = random.nextInt(7);
+
+            switch (random.nextInt(7)){
+                case 0:
+                    team2.add(new Bandit(getNames(), i, 10));
+                    break;
+                case 1:
+                    team2.add(new Crossbowman(getNames(), i, 10));
+                    break;
+                case 2:
+                    team2.add(new Magician(getNames(), i, 10));
+                    break;
+                case 3:
+                    team2.add(new Monk(getNames(), i, 10));
+                    break;
+                case 4:
+                    team2.add(new Peasant(getNames(), i, 10));
+                    break;
+                case 5:
+                    team2.add(new Sniper(getNames(), i, 10));
+                    break;
+                case 6:
+                    team2.add(new Spearman(getNames(), i, 10));
                     break;
             }
         }
-//        System.out.println(team1);
+        System.out.println("Команда 1: ");
+        for (Unit unit : team1){
+            unit.printCoordinates();
+        }
+
+        System.out.println("Команда 2: ");
+        for (Unit unit : team2){
+            unit.printCoordinates();
+        }
     }
 
-//    Random random = new Random();
-
-    public static String getName(){
+    public static String getNames() {
         return String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);
     }
 
 
 
-
-
-
-
-
-
-
-
-    //        Magician magician1 = new Magician("Ivan");
+    // --------------------------Seminar 1 ------------------------------------------
+//        Magician magician1 = new Magician("Ivan");
 //        System.out.println(magician1);
 //
 //        Crossbowman crossbowman1 = new Crossbowman("John");
@@ -97,9 +121,5 @@ public class Main {
 //
 //        Spearman spearman1 = new Spearman("Ron");
 //        System.out.println(spearman1);
+
 }
-
-
-
-
-
