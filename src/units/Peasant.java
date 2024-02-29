@@ -1,5 +1,7 @@
 package units;
 
+import java.util.ArrayList;
+
 public class Peasant extends Unit{
     protected int countArrows;
     public Peasant(String name, int x, int y) {
@@ -10,5 +12,9 @@ public class Peasant extends Unit{
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public void step(ArrayList<Unit> enemy) {
     }
 }

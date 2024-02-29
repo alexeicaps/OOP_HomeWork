@@ -1,6 +1,6 @@
 package units;
 
-abstract public class Unit {
+abstract public class Unit implements MyInterface {
     protected String name;
     protected int health;
     protected String weapon;
@@ -60,7 +60,9 @@ abstract public class Unit {
     }
 
 
-//    public void getInfo(){
+
+
+    //    public void getInfo(){
 //        System.out.printf("Name: %s, Health: %d, Speed: %d, Weapon: %s, Type: %s", name, health, speed,
 //                weapon, getClass().getSimpleName());
 //    }
