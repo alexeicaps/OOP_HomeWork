@@ -1,6 +1,7 @@
 package units;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Crossbowman extends Unit {
     protected int countArrows;
@@ -16,8 +17,9 @@ public class Crossbowman extends Unit {
     }
 
     @Override
-    public void step(ArrayList<Unit> enemy) {
-        if (health < 0 || countArrows == 0) return;
+    public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
+        if (health <= 0 || countArrows == 0) return;
+        Unit target = nearestEenemy(enemy);
 
     }
 
@@ -28,4 +30,5 @@ public class Crossbowman extends Unit {
     public int getArrows() {
         return countArrows;
     }
+
 }

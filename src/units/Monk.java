@@ -15,7 +15,7 @@ public class Monk extends Unit {
     }
 
     @Override
-    public void step(ArrayList<Unit> enemy) {
+    public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
 
     }
 }

@@ -1,6 +1,7 @@
 import units.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 
@@ -73,6 +74,7 @@ public class Main {
         for (Unit unit : team2){
             unit.printCoordinates();
         }
+
     }
 
     public static String getNames() {

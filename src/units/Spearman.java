@@ -15,7 +15,7 @@ public class Spearman extends Unit{
     }
 
     @Override
-    public void step(ArrayList<Unit> enemy) {
+    public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
 
     }
 }

@@ -1,5 +1,7 @@
 package units;
 
+import java.util.List;
+
 abstract public class Unit implements MyInterface {
     protected String name;
     protected int health;
@@ -60,6 +62,23 @@ abstract public class Unit implements MyInterface {
     }
 
 
+    //
+    public Unit nearestEenemy(List<Unit> targets){
+        if (targets.isEmpty()){
+            return null;
+        }
+        Unit nearest = null;
+        double minDistance = Double.MAX_VALUE;
+
+        for (Unit hero : targets) {
+            double distance = position.distance(hero.position);
+            if (distance < minDistance && hero.health > 0){
+                minDistance = distance;
+                nearest = hero;
+            }
+        }
+        return nearest;
+    }
 
 
     //    public void getInfo(){
