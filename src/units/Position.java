@@ -17,6 +17,8 @@ public class Position {
     }
 
 
+
+
     //Метод нахождения расстояния между двумя персонажами
     public double distance(Position target){
         return Math.sqrt((Math.pow(X - target.X, 2) + Math.pow(Y - target.Y, 2)));

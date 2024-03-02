@@ -1,8 +1,6 @@
 import units.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+import java.util.*;
 
 
 public class Main {
@@ -38,9 +36,6 @@ public class Main {
                     break;
             }
 
-////        for (int i = 0; i < 10; i++) {
-////            int val = random.nextInt(7);
-
             switch (random.nextInt(7)){
                 case 0:
                     team2.add(new Bandit(getNames(), i, 10));
@@ -65,25 +60,38 @@ public class Main {
                     break;
             }
         }
-        System.out.println("Команда 1: ");
-        for (Unit unit : team1){
-            unit.printCoordinates();
-        }
+//        System.out.println("Команда 1: ");
+//        for (Unit unit : team1){
+//            unit.print();
+//        }
+//
+//        System.out.println("Команда 2: ");
+//        for (Unit unit : team2){
+//            unit.print();
+//        }
 
-        System.out.println("Команда 2: ");
-        for (Unit unit : team2){
-            unit.printCoordinates();
-        }
+
+        List<Unit> team3 = new ArrayList<>();
+        team3.addAll(team1);
+        team3.addAll(team2);
+        team3.sort(new Comparator<Unit>() {
+            @Override
+            public int compare(Unit o1, Unit o2) {
+
+                return o2.getSpeed() - o1.getSpeed();
+            }
+        });
+        team3.forEach(n -> System.out.println(n.getInfo()));
 
     }
 
     public static String getNames() {
-        return String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);
+        return String.valueOf((Names.values()[new Random().nextInt(Names.values().length - 1)]));
     }
+}
 
 
-
-    // --------------------------Seminar 1 ------------------------------------------
+// --------------------------Seminar 1 ------------------------------------------
 //        Magician magician1 = new Magician("Ivan");
 //        System.out.println(magician1);
 //
@@ -105,4 +113,3 @@ public class Main {
 //        Spearman spearman1 = new Spearman("Ron");
 //        System.out.println(spearman1);
 
-}

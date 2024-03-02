@@ -39,8 +39,15 @@ abstract public class Unit implements MyInterface {
     }
 
     //Метод вывода информации
-    public void print(){
-        System.out.println("class: " + className + " Name: " + name + " Hp: " + health);
+    public void print() {
+        System.out.println("units.Unit: " + className + ", Name: " + name + ", Health: " + health + ", Weapon: " + weapon + ", " +
+                "PowerHit: " + powerHit + ", Speed: " + speed + ", Bronya: " + armor + ", AtackRange: " + attackRange + ", " +
+                "Hidding: " + hiding +"units.Position: " + position.getX() + "," + position.getY() + ".");
+    }
+
+    public String getInfo(){
+        return String.format("Name: %s, Health: %d, Speed: %d, Weapon: %s, Type: %s", name, health, speed,
+                weapon, getClass().getSimpleName());
     }
 
     public int getDamage(Unit unit1, Unit target){
@@ -53,6 +60,13 @@ abstract public class Unit implements MyInterface {
         }
     }
 
+    // Метод нанесения урона
+    public void getHit(float damage){
+        health -= damage;
+        if (health < 0) health = 0;
+        if (health > maxHealth) health = maxHealth;
+    }
+
     public int healing(Monk monk, Unit unit){
         return unit.health += monk.healing;
     }
@@ -61,6 +75,9 @@ abstract public class Unit implements MyInterface {
         return unit.health -= magician.mana;
     }
 
+    public int getHP() {
+        return health;
+    }
 
     //
     public Unit nearestEenemy(List<Unit> targets){
@@ -81,8 +98,7 @@ abstract public class Unit implements MyInterface {
     }
 
 
-    //    public void getInfo(){
-//        System.out.printf("Name: %s, Health: %d, Speed: %d, Weapon: %s, Type: %s", name, health, speed,
-//                weapon, getClass().getSimpleName());
-//    }
+    public int getSpeed() {
+        return speed;
+    }
 }
