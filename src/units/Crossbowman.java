@@ -1,7 +1,6 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Crossbowman extends Unit {
     protected int countArrows;
@@ -25,9 +24,9 @@ public class Crossbowman extends Unit {
         countArrows--;
     }
 
-    private boolean heroIsDead() {
-        return true;
-    }
+//    private boolean heroIsDead() {
+//        return true;
+//    }
 
     public int getArrows() {
         return countArrows;

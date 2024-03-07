@@ -81,7 +81,21 @@ public class Main {
                 return o2.getSpeed() - o1.getSpeed();
             }
         });
-        team3.forEach(n -> System.out.println(n.getInfo()));
+//        team3.forEach(n -> System.out.println(n.getInfo()));
+//        team3.forEach(n -> n.printCoordinates());
+        System.out.println("*".repeat(100));
+
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            scanner.nextLine();
+            for (Unit unit : team3) {
+                if (team1.contains(unit)) unit.step(team2, team1);
+                else unit.step(team1, team2);
+            }
+            team3.forEach(n -> System.out.println(n.getInfo()));
+            team3.forEach(n -> n.printCoordinates());
+        }
+
 
     }
 

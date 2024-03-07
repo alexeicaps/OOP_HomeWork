@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Monk extends Unit {
     protected int healing;
     public Monk(String name, int x, int y) {
-        super(name, 150, "null", 0, 4, 10, 50, 40, new Position(x, y));
+        super(name, 150, "null", 0, 1, 10, 50, 40, new Position(x, y));
         healing = 10;
     }
 

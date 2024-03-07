@@ -16,11 +16,17 @@ public class Position {
         return Y;
     }
 
-
-
-
     //Метод нахождения расстояния между двумя персонажами
     public double distance(Position target){
         return Math.sqrt((Math.pow(X - target.X, 2) + Math.pow(Y - target.Y, 2)));
+    }
+
+    public Position getDifference(Position target){
+        Position difference = new Position(X - target.X, Y - target.Y);
+        return difference;
+    }
+
+    public boolean equals(Position target) {
+        return X == target.X && Y == target.Y;
     }
 }

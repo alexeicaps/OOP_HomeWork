@@ -61,10 +61,10 @@ abstract public class Unit implements MyInterface {
     }
 
     // Метод нанесения урона
-    public void getHit(float damage){
+    public void getHit(int damage){
         health -= damage;
         if (health < 0) health = 0;
-        if (health > maxHealth) health = maxHealth;
+        if (health >= maxHealth) health = maxHealth;
     }
 
     public int healing(Monk monk, Unit unit){
