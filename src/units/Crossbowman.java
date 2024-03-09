@@ -7,13 +7,13 @@ public class Crossbowman extends Unit {
 
     public <speed> Crossbowman(String name, int x, int y) {
         super(name, 150, "crossbow", 20, 3, 15, 50, 40, new Position(x, y));
-        countArrows = 15;
+        countArrows = 125;
 
     }
 
     @Override
     public String toString() {
-        return name;
+        return super.toString() + ", \u27b6: " + countArrows;
     }
 
     @Override
@@ -30,6 +30,10 @@ public class Crossbowman extends Unit {
 
     public int getArrows() {
         return countArrows;
+    }
+
+    public String getInfo(){
+        return "Арбалетчик";
     }
 
 

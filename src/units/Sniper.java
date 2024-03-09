@@ -9,7 +9,7 @@ public class Sniper extends Unit{
     public Sniper(String name, int x, int y) {
         super(name, 150, "slingshot", 40, 3, 15, 50, 100, new Position(x, y));
         accuracy = 5;
-        countArrows = 20;
+        countArrows = 200;
     }
 
     @Override
@@ -22,7 +22,11 @@ public class Sniper extends Unit{
 
     @Override
     public String toString() {
-        return name;
+        return super.toString() + ", \u27b6: " + countArrows;
+    }
+
+    public String getInfo(){
+        return "Снайпер";
     }
 
 }

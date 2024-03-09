@@ -8,10 +8,10 @@ public class Spearman extends Unit{
         super(name, 150, "spear", 30, 2, 15, 50, 40, new Position(x, y));
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
+//    @Override
+//    public String toString() {
+//        return name;
+//    }
 
     @Override
     public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
@@ -27,5 +27,9 @@ public class Spearman extends Unit{
         } else {
             this.position.Y += diff.Y < 0 ? 1 : -1;
         }
+    }
+
+    public String getInfo(){
+        return "Копейщик";
     }
 }

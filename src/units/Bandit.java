@@ -9,10 +9,10 @@ public class Bandit extends Unit{
         theft = 10;
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
+//    @Override
+//    public String toString() {
+//        return name;
+//    }
 
 
     @Override
@@ -31,8 +31,12 @@ public class Bandit extends Unit{
             newposition.Y += diff.Y < 0 ? 1 : -1;
 
         for (Unit unit : friend) {
-            if (unit.position.equals(newposition)) return;
+            if (unit.position.equals(newposition) && unit.health > 0) return;
         }
         this.position = newposition;
+    }
+
+    public String getInfo(){
+        return "Разбойник";
     }
 }

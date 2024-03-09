@@ -15,7 +15,7 @@ abstract public class Unit implements MyInterface {
     protected int maxHealth;
     int x;
     int y;
-    protected Position position;
+    public Position position;
     protected String className;
 
 
@@ -39,15 +39,13 @@ abstract public class Unit implements MyInterface {
     }
 
     //Метод вывода информации
-    public void print() {
-        System.out.println("units.Unit: " + className + ", Name: " + name + ", Health: " + health + ", Weapon: " + weapon + ", " +
-                "PowerHit: " + powerHit + ", Speed: " + speed + ", Bronya: " + armor + ", AtackRange: " + attackRange + ", " +
-                "Hidding: " + hiding +"units.Position: " + position.getX() + "," + position.getY() + ".");
+    @Override
+    public String toString() {
+        return name + ", \u2661: " + health + ", \u2694: " + powerHit + ", \uD83D\uDEE1\uFE0F" + armor;
     }
 
     public String getInfo(){
-        return String.format("Name: %s, Health: %d, Speed: %d, Weapon: %s, Type: %s", name, health, speed,
-                weapon, getClass().getSimpleName());
+        return " ";
     }
 
     public int getDamage(Unit unit1, Unit target){
@@ -100,5 +98,9 @@ abstract public class Unit implements MyInterface {
 
     public int getSpeed() {
         return speed;
+    }
+
+    public int getHp(){
+        return health;
     }
 }
