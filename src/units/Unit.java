@@ -1,5 +1,6 @@
 package units;
 
+import java.util.ArrayList;
 import java.util.List;
 
 abstract public class Unit implements MyInterface {
@@ -17,6 +18,7 @@ abstract public class Unit implements MyInterface {
     int y;
     public Position position;
     protected String className;
+    ArrayList deadList;
 
 
 
@@ -44,6 +46,10 @@ abstract public class Unit implements MyInterface {
         return name + ", \u2661: " + health + ", \u2694: " + powerHit + ", \uD83D\uDEE1\uFE0F" + armor;
     }
 
+    public String printName(){
+        return name;
+    }
+
     public String getInfo(){
         return " ";
     }
@@ -65,13 +71,10 @@ abstract public class Unit implements MyInterface {
         if (health >= maxHealth) health = maxHealth;
     }
 
-    public int healing(Monk monk, Unit unit){
-        return unit.health += monk.healing;
-    }
 
-    public int magic(Magician magician, Unit unit){
-        return unit.health -= magician.mana;
-    }
+//    public int magic(Magician magician, Unit unit){
+//        return unit.health -= magician.mana;
+//    }
 
     public int getHP() {
         return health;

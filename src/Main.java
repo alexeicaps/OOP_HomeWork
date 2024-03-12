@@ -35,7 +35,7 @@ public class Main {
         });
 //        allTeam.forEach(n -> System.out.println(n.getInfo()));
 //        allTeam.forEach(n -> n.printCoordinates());
-        System.out.println("*".repeat(100));
+//        System.out.println("*".repeat(100));
 
         Scanner scanner = new Scanner(System.in);
         boolean flag = true;

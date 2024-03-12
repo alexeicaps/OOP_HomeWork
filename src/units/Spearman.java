@@ -17,6 +17,7 @@ public class Spearman extends Unit{
     public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
         if (health <= 0) return;
         Unit target = super.nearestEenemy(enemy);
+        if (target == null) return;
         if (position.distance(target.position) < 2){
             target.getHit(powerHit);
             return;

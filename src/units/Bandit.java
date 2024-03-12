@@ -19,9 +19,11 @@ public class Bandit extends Unit{
     public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
         if (health <= 0) return;
         Unit target = super.nearestEenemy(enemy);
+        if (target == null) return;
         if (position.distance(target.position) < 2){
             target.getHit(powerHit);
-            return;
+            System.out.println(printName() + " ударил : " + target.name);
+//            return;
         }
         Position diff = position.getDifference(target.position);
         Position newposition = new Position(position.X, position.Y);
