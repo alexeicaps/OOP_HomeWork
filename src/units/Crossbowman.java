@@ -7,7 +7,7 @@ public class Crossbowman extends Unit {
 
     public Crossbowman(String name, int x, int y) {
         super(name, 150, "crossbow", 20, 3, 15, 50, 40, new Position(x, y));
-        countArrows = 12;
+        countArrows = 120;
 
     }
 
