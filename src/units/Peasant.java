@@ -22,9 +22,9 @@ public class Peasant extends Unit{
         flag = false;
     }
 
-    public int getCountArrows() {
-        return countArrows;
-    }
+//    public int getCountArrows() {
+//        return countArrows;
+//    }
 
     public String getInfo(){
         return "Фермер";
