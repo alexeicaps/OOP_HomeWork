@@ -13,7 +13,7 @@ public class Crossbowman extends Unit {
 
     @Override
     public String toString() {
-        return super.toString() + ", \u27b6: " + countArrows;
+        return super.toString() + ", ➼: " + countArrows; //U+27BC
     }
 
     @Override
