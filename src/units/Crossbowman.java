@@ -43,6 +43,7 @@ public class Crossbowman extends Unit {
 //        return countArrows;
 //    }
 
+
     public String getInfo(){
         return "Арбалетчик";
     }
