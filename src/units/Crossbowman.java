@@ -21,7 +21,16 @@ public class Crossbowman extends Unit {
         if ((health <= 0) || (countArrows == 0)) return;
         Unit target = nearestEenemy(enemy);
         target.getHit(this.powerHit);
+
+        for (Unit unit : friend) {
+            if (unit.getInfo().equals("Фермер") && !((Peasant)unit).flag) {
+                ((Peasant)unit).flag = true;
+                return;
+            }
+        }
         countArrows--;
+
+
     }
 
 //    private boolean heroIsDead() {
