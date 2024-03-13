@@ -37,7 +37,7 @@ public class Monk extends Unit {
             deadList.sort((o1, o2) -> o2.speed - o1.speed);
             deadList.getFirst().health += maxHealth;
             mana = 0;
-            System.out.println("Воскресил: " + deadList.getFirst().name);
+            System.out.println(name + " Воскресил: " + deadList.getFirst().name);
             flag = false;
             return;
 

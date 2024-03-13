@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 public class Peasant extends Unit{
     protected int countArrows;
+
     protected boolean flag;
+
     public Peasant(String name, int x, int y) {
         super(name, 150, "arrow", 0, 0, 10, 0, 40, new Position(x, y));
         countArrows = 0;
@@ -13,8 +15,13 @@ public class Peasant extends Unit{
 
 //    @Override
 //    public String toString() {
-//        return name;
+//        return super.toString() + ", ➼: " + countArrows;
 //    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 
     @Override
     public void step(ArrayList<Unit> enemy, ArrayList<Unit> friend) {
